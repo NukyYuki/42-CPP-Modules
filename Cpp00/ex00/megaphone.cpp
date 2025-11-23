@@ -11,7 +11,7 @@ int main(int ac, char **av)
 		{
 			for (int j = 0; av[i][j]; j++)
 			{
-				std::cout << static_cast<char>(toupper(av[i][j]));
+				std::cout << static_cast	<char>(toupper(av[i][j]));
 			}
 		}
 		std::cout << "\n";
