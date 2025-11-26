@@ -1,0 +1,77 @@
+#include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+	this->count = 0;
+}
+
+PhoneBook::~PhoneBook(){
+}
+std::string	cutString(std::string cut)
+{
+	if (cut.length() > 10)
+		return (cut.substr(0, 9) + ".");
+	else
+		return (cut);
+}
+
+void	PhoneBook::contactAdd()
+{
+	int position = this->count % 8;
+	std::string FirstName;
+	std::string LastName;
+	std::string nickName;
+	std::string	PhoneNumber;
+	std::string darkestSecret;
+
+	std::cout << "Enter Contact: First Name " << "\n";
+	std::getline(std::cin, FirstName);
+	std::cout << "Enter Contact: Last Name " << "\n";
+	std::getline(std::cin, LastName);
+	std::cout << "Enter Contact: NickName " << "\n";
+	std::getline(std::cin, nickName);
+	std::cout << "Enter Contact: Phone Number " << "\n";
+	std::getline(std::cin, PhoneNumber);
+	std::cout << "Enter Contact: Darkest Secret " << "\n";
+	std::getline(std::cin, darkestSecret);
+
+	if (FirstName.empty() || LastName.empty() || nickName.empty() || PhoneNumber.empty() || darkestSecret.empty())
+	{
+		std::cout << "Invalid input: All fields must be filled" << "\n";
+		return ;
+	}
+	this->count++;
+	this->contacts[position].setFirstName(FirstName);
+	this->contacts[position].setLastName(LastName);
+	this->contacts[position].setnickName(nickName);
+	this->contacts[position].setPhoneNumber(PhoneNumber);
+	this->contacts[position].setdarkestSecret(darkestSecret);
+	if (this->count >= 8)
+		this->count = 0;
+}
+
+void	PhoneBook::contactSearch()
+{
+	for (int i = 0; i < 8; i++)
+	{
+		if (i < this->count)
+		{
+			std::cout << std::setw(10) << i << "|";
+			std::cout << std::setw(10) << cutString(this->contacts[i].getFirstName()) << "|";
+			std::cout << std::setw(10) << cutString(this->contacts[i].getLastName()) << "|";
+			std::cout << std::setw(10) << cutString(this->contacts[i].getNickName()) << std::endl;
+		}
+	}
+	std::string index;
+	std::cout << "Input the index you want to see: ";
+	std::getline(std::cin, index);
+	if (index.length() == 1 && index[0] >= '0' && index[0] <= '7' && (index[0] - '0' < this->count))
+	{
+		int pos = index[0] - '0';
+					std::cout << "First Name: " << this->contacts[pos].getFirstName() << std::endl;
+			std::cout << "Last Name: " <<this->contacts[pos].getLastName() << std::endl;
+			std::cout << "Nickname: " << this->contacts[pos].getNickName() << std::endl;
+	}
+	else
+		std::cout << "Invalid Contact Index" << std::endl;
+}
