@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/10 12:30:32 by mipinhei          #+#    #+#              #
-#    Updated: 2025/12/10 12:30:33 by mipinhei         ###   ########.fr        #
+#    Created: 2025/12/10 15:25:03 by mipinhei          #+#    #+#              #
+#    Updated: 2025/12/10 15:25:22 by mipinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
 
-NAME = Zombie
+SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+
+NAME = Weapon
 
 CC = c++ -Wall -Werror -Wextra  -g -std=c++98
 all: $(NAME)

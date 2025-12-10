@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:21:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/11/27 10:21:42 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/10 15:31:31 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/12/10 15:50:32 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
-
-int main(int ac, char **av)
-{
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << "\n";
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-			{
-				std::cout << static_cast	<char>(toupper(av[i][j]));
-			}
-		}
-		std::cout << "\n";
-	}
-}
+ class Weapon{
+    private:
+        std::string _type;
+    public:
+        Weapon();
+        Weapon(std::string _type);
+        ~Weapon();
+        std::string const &getType(void);
+        void    setType(std::string newtype);
+ };
