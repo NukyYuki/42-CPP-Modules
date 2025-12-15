@@ -17,9 +17,19 @@ Weapon::Weapon(){
 }
 
 Weapon::Weapon(std::string _type){
-    this->setType(_type);
+    this->_type = _type;
 }
 
 Weapon::~Weapon(){
     
+}
+
+void Weapon::setType(std::string _type)
+{
+    this->_type = _type;
+}
+
+std::string const &Weapon::getType()
+{
+    return (this->_type);
 }
