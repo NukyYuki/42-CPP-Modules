@@ -5,10 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/17 14:00:22 by mipinhei          #+#    #+#              #
-#    Updated: 2025/12/17 14:00:23 by mipinhei         ###   ########.fr        #
+#    Created: 2025/12/17 14:00:13 by mipinhei          #+#    #+#              #
+#    Updated: 2025/12/17 14:00:14 by mipinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRC = main.cpp Fixed.cpp
 
