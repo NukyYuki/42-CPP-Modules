@@ -12,12 +12,12 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _Hit_points(10), _Energy_points(10), _Attack_damage(0)
+ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << "Default Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _Hit_points(10), _Energy_points(10), _Attack_damage(0) 
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) 
 {
     std::cout << "Constructor for " << name << " called" << std::endl;  
 }
@@ -31,10 +31,12 @@ ClapTrap::ClapTrap(ClapTrap const &obj)
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+    if (this == &other)
+        return (*this);
 	_name = other._name;
-    _Hit_points = other._Hit_points;
-    _Energy_points = other._Energy_points;
-    _Attack_damage = other._Attack_damage;
+    _hitPoints = other._hitPoints;
+    _energyPoints = other._energyPoints;
+    _attackDamage = other._attackDamage;
 	return (*this);
 }
 
@@ -45,7 +47,13 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
+    if (_Energy_points <= 0 || _Hit_points <= 0)
+    {
+        std::cout << "ClapTrap " << this->_name << " has no energy or hit points left to attack!" << std::endl;
+        return;
+    }
     std::cout << "ClapTrap " << this->_name << "attacks " << target << ", causing " << _Attack_damage << "points of damage!" << std::endl;
+    _Energy_points--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -58,6 +66,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
+    if (_Energy_points <= 0)
+    {
+        std::cout << "ClapTrap " << this->_name << " has no energy left to repair!" << std::endl;
+        return;
+    }
     std::cout << "ClapTrap " << this->_name << "heals " << amount << " Hit Points!" << std::endl;
     _Hit_points += amount;
+    _Energy_points--;
+    std::cout << this->_name << "Health Status: " << _Hit_points << std::endl;
 }
