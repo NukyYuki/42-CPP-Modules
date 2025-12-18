@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 16:39:48 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/12/17 17:16:23 by mipinhei         ###   ########.fr       */
+/*   Created: 2025-12-18 10:17:58 by mipinhei          #+#    #+#             */
+/*   Updated: 2025-12-18 10:17:58 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
