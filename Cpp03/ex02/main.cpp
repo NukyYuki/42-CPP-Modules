@@ -12,21 +12,38 @@
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {  
-    ClapTrap clap("Clap1");
-    ScavTrap scav("Scav1");
+    std::cout << "--- BEGIN TEST: ClapTrap / ScavTrap / FragTrap ---" << std::endl;
+
+    ClapTrap clap("CL4P-TP");
+    ScavTrap scav("SC4V-TP");
+    FragTrap frag("FR4G-TP");
+
     std::cout << std::endl;
-    clap.attack("a target");
+    clap.attack("an enemy");
+    scav.attack("a wild target");
+    frag.attack("the boss");
+
+    std::cout << std::endl;
     clap.takeDamage(5);
     clap.beRepaired(3);
-    std::cout << std::endl;
-    scav.attack("another target");
+
     scav.takeDamage(10);
     scav.beRepaired(5);
-    scav.guardGate();
+
+    frag.takeDamage(7);
+    frag.beRepaired(4);
+
     std::cout << std::endl;
+    // class-specific behaviours
+    scav.guardGate();
+    frag.highFivesGuys();
+
+    std::cout << std::endl;
+    std::cout << "--- END OF TEST ---" << std::endl;
 
     return 0;
 }

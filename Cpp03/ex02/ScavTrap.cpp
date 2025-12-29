@@ -40,16 +40,10 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other), _gatekeeper(other._
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-	std::cout << "Scavtrap copy assignment operator called" << std::endl;
-    if (this == &other)
-    {
-        return (*this);
-    }
-	_name = other._name;
-    _hitPoints = other._hitPoints;
-    _energyPoints = other._energyPoints;
-    _attackDamage = other._attackDamage;
-	return (*this);
+	ClapTrap::operator=(other);
+	std::cout << "ScavTrap assignment operator called\n";
+	_gatekeeper = other._gatekeeper;
+	return *this;
 }
 
 void ScavTrap::attack(const std::string& target){
@@ -69,5 +63,5 @@ void ScavTrap::guardGate(){
 	if (_gatekeeper)
 		std::cout << "ScavTrap " << _name << " has entered Gate Keeper mode" << std::endl;
 	else
-		std::cout << "ScavTrap " << _name <<  " leaves Gate Keeper mode" << std::endl;
+		std::cout << "ScavTrap " << _name <<  " leaves Gate Keeper mode" << std::endl; 
 }
