@@ -18,9 +18,9 @@ int main()
 {  
     std::cout << "--- BEGIN TEST: ClapTrap / ScavTrap / FragTrap ---" << std::endl;
 
-    ClapTrap clap("CL4P-TP");
-    ScavTrap scav("SC4V-TP");
-    FragTrap frag("FR4G-TP");
+    ClapTrap clap("Clap1");
+    ScavTrap scav("Scav1");
+    FragTrap frag("Frag1");
 
     std::cout << std::endl;
     clap.attack("an enemy");

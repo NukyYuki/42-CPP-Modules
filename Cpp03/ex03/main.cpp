@@ -19,34 +19,35 @@ int main()
 {
     std::cout << "--- EX03 TEST START ---" << std::endl;
 
-    ClapTrap a("Clappy");
-    ScavTrap b("Scavy");
-    FragTrap c("Fraggy");
-    DiamondTrap d("Diappy");
+    ClapTrap clap("Clap1");
+    ScavTrap scav("Scav1");
+    FragTrap frag("Frag1");
+    DiamondTrap diam("Diam1");
 
     std::cout << std::endl;
-    a.attack("a target");
-    b.attack("a target");
-    c.attack("a target");
-    d.attack("a target");
+    clap.attack("a target");
+    scav.attack("a target");
+    frag.attack("a target");
+    diam.attack("a target");
 
     std::cout << std::endl;
-    a.takeDamage(5);
-    a.beRepaired(3);
+    clap.takeDamage(5);
+    clap.beRepaired(3);
+    
+    scav.takeDamage(10);
+    scav.beRepaired(5);
+    scav.guardGate();
 
-    b.takeDamage(10);
-    b.beRepaired(5);
-    b.guardGate();
-
-    c.takeDamage(7);
-    c.beRepaired(4);
-    c.highFivesGuys();
+    frag.takeDamage(7);
+    frag.beRepaired(4);
+    frag.highFivesGuys();
 
     std::cout << std::endl;
-    d.takeDamage(8);
-    d.beRepaired(2);
-    d.whoAmI();
-
+    diam.takeDamage(8);
+    diam.beRepaired(2);
+    diam.guardGate();
+    diam.highFivesGuys();
+    diam.whoAmI();
     std::cout << std::endl << "--- EX03 TEST END ---" << std::endl;
     return 0;
 }
