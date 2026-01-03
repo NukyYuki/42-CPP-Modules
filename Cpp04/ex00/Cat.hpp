@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-01 13:57:26 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-01 13:57:26 by mipinhei         ###   ########.fr       */
+/*   Created: 2026-01-03 22:19:47 by mipinhei          #+#    #+#             */
+/*   Updated: 2026-01-03 22:19:47 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 #include <iostream>
 #include <string>
+#include "Animal.hpp"
 
-class Animal{
+class Cat : public Animal{
 	protected:
 		std::string _type;
 	public:
-		Animal();
-		virtual ~Animal();
-		Animal(const std::string &type);
-		Animal(const Animal &obj);
-		Animal &operator=(const Animal &obj);
+		Cat();
+		virtual ~Cat();
+		Cat(const std::string &type);
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
 		std::string getType() const;
-		virtual void makeSound() const;
+		void makeSound() const;
 };
