@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-03 22:57:47 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-03 22:57:47 by mipinhei         ###   ########.fr       */
+/*   Created: 2026-01-03 22:19:47 by mipinhei          #+#    #+#             */
+/*   Updated: 2026-01-03 22:19:47 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 #include <iostream>
 #include <string>
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongCat : public WrongAnimal{
+class Cat : public Animal{
+	private:
+		Brain *_brain;
 	public:
-		WrongCat();
-		virtual ~WrongCat();
-		WrongCat(const std::string &type);
-		WrongCat(const WrongCat &obj);
-		WrongCat &operator=(const WrongCat &obj);
-		std::string getType() const;
+		Cat();
+		virtual ~Cat();
+		Cat(const std::string &type);
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
 		void makeSound() const;
+		*Brain getBrain()
 };

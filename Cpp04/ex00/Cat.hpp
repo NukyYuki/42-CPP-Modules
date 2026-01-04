@@ -17,14 +17,11 @@
 #include "Animal.hpp"
 
 class Cat : public Animal{
-	protected:
-		std::string _type;
 	public:
 		Cat();
 		virtual ~Cat();
 		Cat(const std::string &type);
 		Cat(const Cat &obj);
 		Cat &operator=(const Cat &obj);
-		std::string getType() const;
 		void makeSound() const;
 };
