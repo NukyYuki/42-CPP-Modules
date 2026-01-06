@@ -11,13 +11,7 @@ Brain::~Brain()
 
 Brain::Brain(const Brain &obj)
 {
-    std::cout << "Brain's Reference Copy Constructor called" << std::endl;
-    *this = obj;
-}
-
-Brain::Brain(const Brain *obj)
-{
-    std::cout << "Brain's Pointer Copy Constructor called" << std::endl;
+    std::cout << "Brain's Copy Constructor called" << std::endl;
     *this = obj;
 }
 

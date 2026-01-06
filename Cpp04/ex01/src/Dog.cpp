@@ -44,7 +44,9 @@ Dog& Dog::operator=(const Dog& other)
     {
         return (*this);
     }
-	_brain = new Brain(other.getBrain());
+	if (_brain)
+		delete _brain;
+	_brain = new Brain(*other.getBrain());
 	_type = other._type;
 	return (*this);
 }

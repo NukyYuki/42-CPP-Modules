@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/Dog.hpp"
-
-Dog::Dog() : Animal("Dog")
-{
-	std::cout << "Default Dog Constructor called" << std::endl;
-	_brain = new Brain();
-}
-
+	
 Dog::Dog() : AAnimal("Dog")
 {
 	std::cout << "Default Dog Constructor called" << std::endl;
@@ -30,19 +24,13 @@ Dog::~Dog()
 	delete _brain;
 }
 
-Dog::Dog(const std::string &type) : Animal(type)
-{
-	std::cout << "Default Parameter Dog Constructor called" << std::endl;
-	_brain = new Brain();
-}
-
 Dog::Dog(const std::string &type) : AAnimal(type)
 {
 	std::cout << "Default Parameter Dog Constructor called" << std::endl;
 	_brain = new Brain();
 }
 
-Dog::Dog(const Dog &obj) : Animal::Animal(obj)
+Dog::Dog(const Dog &obj) : AAnimal::AAnimal(obj)
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
 	_brain = new Brain(*obj._brain);
@@ -56,7 +44,9 @@ Dog& Dog::operator=(const Dog& other)
     {
         return (*this);
     }
-	_brain = new Brain(other.getBrain());
+	if (_brain)
+		delete _brain;
+	_brain = new Brain(*other.getBrain());
 	_type = other._type;
 	return (*this);
 }

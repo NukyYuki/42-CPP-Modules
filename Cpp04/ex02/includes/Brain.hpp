@@ -10,7 +10,6 @@ class Brain{
         Brain();
         ~Brain();
         Brain(const Brain &obj);
-        Brain(const Brain *obj);
 		Brain &operator=(const Brain &obj);
         std::string getIdea(int index) const;
         void setIdea(int index, std::string src);

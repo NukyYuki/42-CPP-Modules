@@ -18,7 +18,7 @@
 #include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal{
+class Cat : public AAnimal{
 	private:
 		Brain *_brain;
 	public:
@@ -28,5 +28,5 @@ class Cat : public Animal{
 		Cat(const Cat &obj);
 		Cat &operator=(const Cat &obj);
 		void makeSound() const;
-		Brain* getBrain();
+		Brain* getBrain() const;
 };

@@ -12,7 +12,7 @@
 
 #include "../includes/Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
 	std::cout << "Default Cat Constructor called" << std::endl;
 	_brain = new Brain();
@@ -24,13 +24,13 @@ Cat::~Cat()
 	delete _brain;
 }
 
-Cat::Cat(const std::string &type) : Animal(type)
+Cat::Cat(const std::string &type) : AAnimal(type)
 {
 	std::cout << "Default Parameter Cat Constructor called" << std::endl;
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat &obj) : Animal::Animal(obj){
+Cat::Cat(const Cat &obj) : AAnimal::AAnimal(obj){
 	std::cout << "Cat Copy constructor called" << std::endl;
 	_brain = new Brain(*obj._brain);
 	*this = obj;
@@ -43,6 +43,9 @@ Cat& Cat::operator=(const Cat& other)
     {
         return (*this);
     }
+	if (_brain)
+		delete _brain;
+	_brain = new Brain(*other.getBrain());
 	_type = other._type;
 	return (*this);
 }
@@ -51,7 +54,7 @@ void Cat::makeSound() const{
 	std::cout << "Nyan Nyan" << std::endl;
 }
 
-Brain* Cat::getBrain()
+Brain* Cat::getBrain() const
 {
 	return (this->_brain);
 }

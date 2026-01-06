@@ -15,11 +15,11 @@ Brain::Brain(const Brain &obj)
     *this = obj;
 }
 
-Brain::Brain(const Brain *obj)
+/* Brain::Brain(const Brain *obj)
 {
     std::cout << "Brain's Pointer Copy Constructor called" << std::endl;
     *this = obj;
-}
+} */
 
 Brain &Brain::operator=(const Brain &obj){
     std::cout << "Brain Copy assignment operator called" << std::endl;
