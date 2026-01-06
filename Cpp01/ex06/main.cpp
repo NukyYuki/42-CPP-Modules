@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-12-16 12:15:50 by mipinhei          #+#    #+#             */
-/*   Updated: 2025-12-16 12:15:50 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/16 12:15:50 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 14:49:13 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		 std::cout << "Wrong usage.\ndefault: ./harlFilter [debug/info/warning/error]" << std::endl;
+		 std::cout << "Wrong usage. Only 2 arguments\ndefault: ./harlFilter [debug/info/warning/error]" << std::endl;
 		return (1);
 	}
 	else

@@ -14,9 +14,9 @@
 
 #include <iostream>
 #include <string>
-#include "WrongAAnimal.hpp"
+#include "WrongAnimal.hpp"
 
-class WrongCat : public WrongAAnimal{
+class WrongCat : public WrongAnimal{
 	public:
 		WrongCat();
 		virtual ~WrongCat();

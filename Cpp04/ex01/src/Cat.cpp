@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-03 22:19:22 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-03 22:19:22 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/03 22:19:22 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:07:04 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../includes/Cat.hpp"
 
 Cat::Cat() : Animal("Cat")
 {
@@ -51,7 +51,7 @@ void Cat::makeSound() const{
 	std::cout << "Nyan Nyan" << std::endl;
 }
 
-*Brain Cat::getBrain()
+Brain* Cat::getBrain()
 {
 	return (this->_brain);
 }

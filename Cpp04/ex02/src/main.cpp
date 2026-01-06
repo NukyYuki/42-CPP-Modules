@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-01 13:57:01 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-01 13:57:01 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/01 13:57:01 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:31:31 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "WrongAAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Dog.hpp" 
-#include "Animal.hpp"
+#include "../includes/AAnimal.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/WrongCat.hpp"
+#include "../includes/Dog.hpp" 
 
 int main()
-{
-	int main()
 {
 	{
 		std::cout << "----------AAnimal----------" << std::endl;
@@ -37,5 +35,4 @@ int main()
 
 	}
 	return 0;
-}
 }

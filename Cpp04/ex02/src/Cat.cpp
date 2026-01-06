@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-03 22:19:22 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-03 22:19:22 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/03 22:19:22 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:07:04 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../includes/Cat.hpp"
 
-Cat::Cat() : AAnimal("Cat")
+Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Default Cat Constructor called" << std::endl;
 	_brain = new Brain();
@@ -24,13 +24,13 @@ Cat::~Cat()
 	delete _brain;
 }
 
-Cat::Cat(const std::string &type) : AAnimal(type)
+Cat::Cat(const std::string &type) : Animal(type)
 {
 	std::cout << "Default Parameter Cat Constructor called" << std::endl;
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat &obj) : AAnimal::AAnimal(obj){
+Cat::Cat(const Cat &obj) : Animal::Animal(obj){
 	std::cout << "Cat Copy constructor called" << std::endl;
 	_brain = new Brain(*obj._brain);
 	*this = obj;
@@ -51,7 +51,7 @@ void Cat::makeSound() const{
 	std::cout << "Nyan Nyan" << std::endl;
 }
 
-*Brain Cat::getBrain()
+Brain* Cat::getBrain()
 {
 	return (this->_brain);
 }

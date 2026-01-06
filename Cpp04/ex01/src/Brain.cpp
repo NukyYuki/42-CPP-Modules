@@ -1,35 +1,41 @@
-#include "Brain.hpp"
+#include "../includes/Brain.hpp"
 
 Brain::Brain()
 {
-    std::cout << "Default Brain Constructor called";
+    std::cout << "Default Brain Constructor called" << std::endl;
 }
 Brain::~Brain()
 {
-    std::cout << "Brain Destructor called";
+    std::cout << "Brain Destructor called" << std::endl;
 }
 
 Brain::Brain(const Brain &obj)
 {
-    std::cout << "Brain's Copy Constructor called"
+    std::cout << "Brain's Reference Copy Constructor called" << std::endl;
     *this = obj;
 }
 
-Brain &operator=(const Brain &obj){
+Brain::Brain(const Brain *obj)
+{
+    std::cout << "Brain's Pointer Copy Constructor called" << std::endl;
+    *this = obj;
+}
+
+Brain &Brain::operator=(const Brain &obj){
     std::cout << "Brain Copy assignment operator called" << std::endl;
-         if (this == &other)
+         if (this == &obj)
     {
         return (*this);
     }
-    for (i = 0; i < 100; i++)
-        this->idea[i] = obj[i];
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = obj.ideas[i];
     return (*this);
 }
 std::string Brain::getIdea(int index) const{
-    return (this->index[i]);
+    return (this->ideas[index]);
 }
 
 void Brain::setIdea(int index, std::string src)
 {
-    this->idea[i] = src;
+    this->ideas[index] = src;
 }

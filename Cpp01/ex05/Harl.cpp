@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-12-14 21:36:12 by mipinhei          #+#    #+#             */
-/*   Updated: 2025-12-14 21:36:12 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/14 21:36:12 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 14:48:32 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

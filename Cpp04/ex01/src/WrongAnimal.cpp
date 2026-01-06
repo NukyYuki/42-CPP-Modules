@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-03 22:49:10 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-03 22:49:10 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/03 22:49:10 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:20:08 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal()
 {

@@ -3,59 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-01 13:57:01 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-01 13:57:01 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/01 13:57:01 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:23:30 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Dog.hpp" 
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/WrongCat.hpp"
+#include "../includes/Dog.hpp" 
 
 int main()
 {
 	{
-		std::cout << "----------First Test-----------" << std::endl;
-		const Animal* meta = new Animal();
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound();
-		meta->makeSound();
-		delete meta;
-		delete j;
-		delete i;
-	}
-	{
-		std::cout << "----------Second Test-----------" << std::endl;
-		const Animal* animal = new Animal();
-		const Animal* dog = new Dog();
-		const Animal* cat = new Cat();
-		std::cout << dog->getType() << " " << std::endl;
-		std::cout << cat->getType() << " " << std::endl;
-		cat->makeSound();
-		dog->makeSound();
-		animal->makeSound();
-		delete animal;
-		delete dog;
-		delete cat;
-	}
-	{
-		std::cout << "----------Third Test-----------" << std::endl;
-		std::cout << "----------Wrong Animal----------" << std::endl;
-		const WrongAnimal* wronganimal = new WrongAnimal();
-		const WrongAnimal* wrongcat = new WrongCat();
-		std::cout << wrongcat->getType() << " " << std::endl;
-		wronganimal->makeSound();
-		wrongcat->makeSound();
-		delete wronganimal;
-		delete wrongcat;
+		std::cout << "----------Animal Brains----------" << std::endl;
+		const int size = 100;
+		Animal* animal[size];
+		for (int i = 0; i < size; i++)
+		{
+			if(i < size / 2)
+			{
+				animal[i] = new Dog();
+			}
+			else
+			{
+				animal[i] = new Cat();
+			}
+		}
+		for (int i = 0; i < size; i++){
+			animal[i]->makeSound();
+		}
+		for (int i = 0; i < size; i++)
+		{
+			if(Dog *dog = dynamic_cast<Dog*>(animal[i]))
+			{
+				Brain *dogBrain = dog->getBrain();
+				dogBrain->setIdea(0, "I am a dog");
+				std::cout << dogBrain->getIdea(0) << std::endl;
+			}
+			else if(Cat *cat = dynamic_cast<Cat*>(animal[i]))
+			{
+				Brain *catBrain = cat->getBrain();
+				catBrain->setIdea(0, "I am a cat");
+				std::cout << catBrain->getIdea(0) << std::endl;
+			}
+		}
+		for (int i = 0; i < size; i++)
+		{
+			delete animal[i];
+		}
 	}
 	return 0;
 }

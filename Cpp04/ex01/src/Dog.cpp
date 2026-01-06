@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-03 22:19:16 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-03 22:19:16 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/03 22:19:16 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:13:44 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../includes/Dog.hpp"
 
 Dog::Dog() : Animal("Dog")
 {
@@ -44,7 +44,7 @@ Dog& Dog::operator=(const Dog& other)
     {
         return (*this);
     }
-	_brain = new Brain(other._brain);
+	_brain = new Brain(other.getBrain());
 	_type = other._type;
 	return (*this);
 }
@@ -53,7 +53,7 @@ void Dog::makeSound() const{
 	std::cout << "Woof Woof" << std::endl;
 }
 
-*Brain Dog::getBrain()
+Brain* Dog::getBrain() const
 {
 	return (this->_brain);
 }

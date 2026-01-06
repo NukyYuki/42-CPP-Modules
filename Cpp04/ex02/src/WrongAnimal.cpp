@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-03 22:49:10 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-03 22:49:10 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/03 22:49:10 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:20:08 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAAnimal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
-WrongAAnimal::WrongAAnimal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Default WrongAAnimal Constructor called" << std::endl;
+	std::cout << "Default WrongAnimal Constructor called" << std::endl;
 }
 
-WrongAAnimal::~WrongAAnimal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAAnimal Destructor called" << std::endl;
+	std::cout << "WrongAnimal Destructor called" << std::endl;
 }
 
-WrongAAnimal::WrongAAnimal(const std::string &type) : _type(type)
+WrongAnimal::WrongAnimal(const std::string &type) : _type(type)
 {
-		std::cout << "Default Parameter WrongAAnimal Constructor called" << std::endl;
+		std::cout << "Default Parameter WrongAnimal Constructor called" << std::endl;
 }
 
-WrongAAnimal::WrongAAnimal(const WrongAAnimal &obj){
-	std::cout << "WrongAAnimal Copy constructor called" << std::endl;
+WrongAnimal::WrongAnimal(const WrongAnimal &obj){
+	std::cout << "WrongAnimal Copy constructor called" << std::endl;
 	*this = obj;
 }
 
-WrongAAnimal& WrongAAnimal::operator=(const WrongAAnimal& other)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
-	std::cout << "WrongAAnimal Copy assignment operator called" << std::endl;
+	std::cout << "WrongAnimal Copy assignment operator called" << std::endl;
     if (this == &other)
     {
         return (*this);
@@ -43,11 +43,11 @@ WrongAAnimal& WrongAAnimal::operator=(const WrongAAnimal& other)
 	return (*this);
 }
 
-std::string WrongAAnimal::getType() const
+std::string WrongAnimal::getType() const
 {
 	return(_type);
 }
 
-void WrongAAnimal::makeSound() const{
-	std::cout << "WrongAAnimal sound " << std::endl;
+void WrongAnimal::makeSound() const{
+	std::cout << "WrongAnimal sound " << std::endl;
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-01 13:58:47 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-01 13:58:47 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/01 13:58:47 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/06 17:06:55 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../includes/Animal.hpp"
 
 Animal::Animal()
 {
