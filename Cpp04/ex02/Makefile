@@ -18,12 +18,14 @@ VPATH = src
 RM = rm -rf
 
 NAME = AAnimal
-SRC = main.cpp Animal.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
+
+.PHONY: all clean fclean re
 
 $(OBJ_DIR):
 	mkdir -p obj

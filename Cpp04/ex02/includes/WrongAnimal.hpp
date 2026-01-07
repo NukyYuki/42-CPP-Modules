@@ -20,10 +20,10 @@ class WrongAnimal{
 		std::string _type;
 	public:
 		WrongAnimal();
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 		WrongAnimal(const std::string &type);
 		WrongAnimal(const WrongAnimal &obj);
 		WrongAnimal &operator=(const WrongAnimal &obj);
 		std::string getType() const;
-		virtual void makeSound() const;
+		void makeSound() const;
 };

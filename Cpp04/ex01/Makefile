@@ -25,6 +25,8 @@ OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
+.PHONY: all clean fclean re
+
 $(OBJ_DIR):
 	mkdir -p obj
 

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/AAnimal.hpp"
-#include "../includes/Animal.hpp"
 #include "../includes/Cat.hpp"
 #include "../includes/WrongAnimal.hpp"
 #include "../includes/WrongCat.hpp"
