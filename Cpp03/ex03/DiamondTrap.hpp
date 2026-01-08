@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-12-29 22:02:16 by mipinhei          #+#    #+#             */
-/*   Updated: 2025-12-29 22:02:16 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/29 22:02:16 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/08 15:07:04 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

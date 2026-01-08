@@ -26,10 +26,12 @@ Brain &Brain::operator=(const Brain &obj){
     return (*this);
 }
 std::string Brain::getIdea(int index) const{
-    return (this->ideas[index]);
+    if (index >= 0 && index <= 100)
+        return (this->ideas[index]);
 }
 
 void Brain::setIdea(int index, std::string src)
 {
-    this->ideas[index] = src;
+    if (index >= 0 && index <= 100)
+        this->ideas[index] = src;
 }
