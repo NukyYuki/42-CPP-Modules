@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class Bureaucrat{
   private:
@@ -25,14 +26,20 @@ public:
     Bureaucrat(const Bureaucrat &obj);
     Bureaucrat(const std::string name, const int grade);
     Bureaucrat &operator=(const Bureaucrat &obj);
-    std::string const getName();
-    int         getGrade();
+    std::string const getName() const;
+    int         getGrade() const;
     void        setName(std::string name);
     void        setGrade(int grade);
     void        incrementGrade();
     void        decrementGrade();
-    std::string GradeTooHighException();
-    std::string GradeTooLowException();
+    class GradeTooHighException : public std::exception {
+        public:
+            virtual const char* what() const throw();
+    };
+    class GradeTooLowException : public std::exception {
+        public:
+            virtual const char* what() const throw();
+    };
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
