@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
  Form::Form(): _name("Default"), _signed(false), _signedGrade(150), _execGrade(150){
 	std::cout << "Default Form Constructor called" <<  std::endl;
@@ -21,9 +22,9 @@
  {
 	std::cout << "Parametized Form Constructor called" <<  std::endl;
 	if (signedGrade < 1 || execGrade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (signedGrade > 150 || execGrade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 Form::~Form(){
@@ -61,10 +62,30 @@ int					Form::getExecGrade() const{
 	return (_execGrade);
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw(){
-    return ("Highest Grade Reached\n");
+const char* Form::GradeTooHighException::what() const throw(){
+	return ("grade is too high");
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw(){
-    return ("Lowest Grade Reached\n");
+const char* Form::GradeTooLowException::what() const throw(){
+	return ("grade is too low");
+}
+
+const char* Form::FormSigned::what() const throw(){
+	return ("form is already signed");
+}
+
+void	Form::beSigned(Bureaucrat &signature){
+	if (_signed)
+		throw Form::FormSigned();
+	if (signature.getGrade() > _signedGrade)
+		throw Form::GradeTooLowException();
+	_signed = true;
+}
+
+std::ostream &operator<<(std::ostream &out, Form const &form)
+{
+	out << form.getName() << ", signed: " << (form.getSigned() ? "true" : "false")
+		<< ", signedGrade: " << form.getSignedGrade()
+		<< ", execGrade: " << form.getExecGrade();
+	return out;
 }

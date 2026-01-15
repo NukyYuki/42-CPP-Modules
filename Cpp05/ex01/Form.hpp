@@ -12,10 +12,12 @@
 
 #pragma once
 
-#include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
 #include <exception>
+
+// Forward declaration to avoid circular include
+class Bureaucrat;
 
 class Form{
 	private:
@@ -39,6 +41,10 @@ class Form{
     	        virtual const char* what() const throw();
     	};
     	class GradeTooLowException : public std::exception {
+    	    public:
+    	        virtual const char* what() const throw();
+    	};
+		class FormSigned : public std::exception {
     	    public:
     	        virtual const char* what() const throw();
     	};

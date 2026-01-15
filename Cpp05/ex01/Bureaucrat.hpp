@@ -15,7 +15,9 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+
+// Forward declaration to avoid circular include
+class Form;
 
 class Bureaucrat{
   private:
@@ -33,7 +35,7 @@ public:
     void        setGrade(int grade);
     void        incrementGrade();
     void        decrementGrade();
-    void        signForm();
+    void        signForm(Form &form);
     class GradeTooHighException : public std::exception {
         public:
             virtual const char* what() const throw();

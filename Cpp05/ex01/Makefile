@@ -2,12 +2,13 @@ NAME = Bureaucrat
 
 # Source files
 SRCS = main.cpp \
-	Bureaucrat.cpp
+	Bureaucrat.cpp \
+	Form.cpp
 
 OBJS = $(patsubst %.cpp,%.o,$(SRCS))
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -MP
 
 # Auto-generated dependency files
 DEPS = $(OBJS:.o=.d)
