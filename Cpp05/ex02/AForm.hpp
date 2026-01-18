@@ -16,6 +16,8 @@
 #include <iostream>
 #include <exception>
 
+class Bureaucrat;
+
 class Form{
 	private:
 		std::string const	_name;
