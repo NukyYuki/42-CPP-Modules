@@ -21,3 +21,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 : AForm("ShrubberyCreationForm", 145, 137), _target(target){
 	std::cout << "Parametized ShrubberyCreationForm Constructor called" <<  std::endl;
 }
+
+std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm const &ShrubberyForm){
+	out << "Form Name: " << ShrubberyForm.getName() << ", Sign Grade: " << ShrubberyForm.getSignGrade()
+		<< ", Execute Grade: " << ShrubberyForm.getExecuteGrade() << ", Is Signed: " << ShrubberyForm.getIsSigned() << std::endl;
+	return out;
+}

@@ -74,6 +74,13 @@ const char* AForm::AFormSigned::what() const throw(){
 	return ("AForm is already signed");
 }
 
+void AForm::execute(Bureaucrat const & executor) const{
+	if (!_signed)
+		throw AForm::AFormNotSigned();
+	if (executor.getGrade() > _execGrade)
+		throw AForm::GradeTooLowException();
+}
+
 void	AForm::beSigned(Bureaucrat &signature){
 	if (_signed)
 		throw AForm::AFormSigned();

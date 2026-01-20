@@ -28,6 +28,9 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm(const PresidentialPardonForm &obj);
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &obj);
+
+		std::string			getTarget() const;
+
 		void				beSigned(Bureaucrat &signature);
 		void				execute(Bureaucrat const & executor) const;
 };
