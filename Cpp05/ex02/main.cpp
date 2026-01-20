@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main(void)
 {
@@ -23,19 +23,19 @@ int main(void)
 	std::cout << b << '\n';
 	std::cout << '\n';
 
-	Form fa("fa", 7, 1);
+	AForm fa("fa", 7, 1);
 	std::cout << fa << '\n';
-	a.signForm(fa);
+	a.signAForm(fa);
 	std::cout << fa << '\n';
-	b.signForm(fa);
+	b.signAForm(fa);
 	std::cout << fa << '\n';
-	b.signForm(fa);
+	b.signAForm(fa);
 	std::cout << fa << '\n';
 	std::cout << '\n';
 
 	try
 	{
-		Form fb("fb", 151, 1);
+		AForm fb("fb", 151, 1);
 		std::cout << fb << '\n';
 	}
 	catch (const std::exception& e)
@@ -46,7 +46,7 @@ int main(void)
 
 	try
 	{
-		Form fb("fc", 150, 0);
+		AForm fb("fc", 150, 0);
 		std::cout << fb << '\n';
 	}
 	catch (const std::exception& e)

@@ -2,7 +2,7 @@ NAME = Bureaucrat
 
 SRCS = main.cpp \
 	Bureaucrat.cpp \
-	Form.cpp
+	AForm.cpp
 
 OBJS = $(patsubst %.cpp,%.o,$(SRCS))
 
