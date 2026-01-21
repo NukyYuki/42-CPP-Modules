@@ -23,7 +23,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 }
 
 std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm const &ShrubberyForm){
-	out << "Form Name: " << ShrubberyForm.getName() << ", Sign Grade: " << ShrubberyForm.getSignGrade()
-		<< ", Execute Grade: " << ShrubberyForm.getExecuteGrade() << ", Is Signed: " << ShrubberyForm.getIsSigned() << std::endl;
+	out << "Form Name: " << ShrubberyForm.getName() << ", Sign Grade: " << ShrubberyForm.getSignedGrade()
+		<< ", Execute Grade: " << ShrubberyForm.getExecGrade() << ", Is Signed: " << ShrubberyForm.getSigned() << std::endl;
 	return out;
+}
+
+std::string	ShrubberyCreationForm::getTarget() const{
+	return (_target);
 }

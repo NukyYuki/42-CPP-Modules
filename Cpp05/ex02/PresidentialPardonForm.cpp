@@ -24,24 +24,24 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target)
 	std::cout << "Parametrized PresidentialPardonForm Constructor called" <<  std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)
-: AForm(other), _target(other._target)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj)
+: AForm(obj), _target(obj._target)
 {
 	std::cout << "Copy PresidentialPardonForm Constructor called" <<  std::endl;
 }
 
-PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
 {
 	std::cout << "PresidentialPardonForm Copy Assignment Operator called" <<  std::endl;
-	if (this != &other)
+	if (this != &obj)
 	{
-		AForm::operator=(other);
-		this->_target = other._target;
+		AForm::operator=(obj);
+		this->_target = obj._target;
 	}
 	return *this;
 }
 
-PredisentialPardonForm::~PresidentialPardonForm()
+PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout << "PresidentialPardonForm Destructor called" <<  std::endl;
 }
@@ -53,7 +53,7 @@ std::string PresidentialPardonForm::getTarget() const
 
 std::ostream &operator<<(std::ostream &out, PresidentialPardonForm const &PresidentialPardonForm)
 {
-	out << "PresidentialPardonForm Target: " << PresidentialPardonForm.getTarget() << ", Signed: " << PresidentialPardonForm.getIsSigned()
-		<< ", Sign Grade: " << PresidentialPardonForm.getSignGrade() << ", Exec Grade: " << PresidentialPardonForm.getExecGrade() << std::endl;
+	out << "PresidentialPardonForm Target: " << PresidentialPardonForm.getTarget() << ", Signed: " << PresidentialPardonForm.getSigned()
+		<< ", Sign Grade: " << PresidentialPardonForm.getSignedGrade() << ", Exec Grade: " << PresidentialPardonForm.getExecGrade() << std::endl;
 	return out;
 }
