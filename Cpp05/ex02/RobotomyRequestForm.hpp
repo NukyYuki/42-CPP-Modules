@@ -15,11 +15,13 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include <cstdlib>
+#include <ctime>
 #include "AForm.hpp"
 
 class Bureaucrat;
 
-class RobotomyRequestForm : AForm{
+class RobotomyRequestForm : public AForm{
 	private:
 		std::string	_target;
 	public:
@@ -31,6 +33,7 @@ class RobotomyRequestForm : AForm{
 
 		std::string			getTarget() const;
 
-		void				beSigned(Bureaucrat &signature);
 		void				execute(Bureaucrat const & executor) const;
-}
+};
+
+std::ostream &operator<<(std::ostream &out, RobotomyRequestForm const &RobotomyRequestForm);

@@ -34,7 +34,10 @@ public:
     void        setGrade(int grade);
     void        incrementGrade();
     void        decrementGrade();
+
     void        signAForm(AForm &AForm);
+    void        executeForm(AForm const &form);
+    
     class GradeTooHighException : public std::exception {
         public:
             virtual const char* what() const throw();

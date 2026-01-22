@@ -34,6 +34,30 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return *this;
 }
 
+RobotomyRequestForm::~RobotomyRequestForm(){
+	std::cout << "RobotomyRequestForm Destructor called" <<  std::endl;
+}
+
 std::string	RobotomyRequestForm::getTarget() const{
 	return (_target);
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const{
+	AForm::execute(executor);
+	srand(time(NULL));
+	int num = rand() % 2;
+	if (num)
+		std::cout << _target << " had been robotomized" << std::endl;
+	else
+		std::cout << "Robotomy has failed" << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &out, RobotomyRequestForm const &RobotomyForm)
+{
+	out << "RobotomyRequestForm Target: " << RobotomyForm.getTarget() << std::endl;
+	out << "Form: " << RobotomyForm.getName() << std::endl;
+	out << "Signed: " << RobotomyForm.getSigned() << std::endl;
+	out	<< "Sign Grade: " << RobotomyForm.getSignedGrade() << std::endl;
+	out << "Exec Grade: " << RobotomyForm.getExecGrade() << std::endl;
+	return out;
 }

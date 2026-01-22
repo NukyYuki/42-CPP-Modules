@@ -71,7 +71,15 @@ const char* AForm::GradeTooLowException::what() const throw(){
 }
 
 const char* AForm::AFormSigned::what() const throw(){
-	return ("AForm is already signed");
+	return ("form is already signed");
+}
+
+const char* AForm::AFormNotSigned::what() const throw(){
+	return ("form has not been signed, therefore, cannot be executed");
+}
+
+const char* AForm::FileNotOpened::what() const throw(){
+	return ("File could not be opened");
 }
 
 void AForm::execute(Bureaucrat const & executor) const{
@@ -91,8 +99,9 @@ void	AForm::beSigned(Bureaucrat &signature){
 
 std::ostream &operator<<(std::ostream &out, AForm const &AForm)
 {
-	out << AForm.getName() << ", signed: " << (AForm.getSigned() ? "true" : "false")
-		<< ", signedGrade: " << AForm.getSignedGrade()
-		<< ", execGrade: " << AForm.getExecGrade();
+	out << "Form: " << AForm.getName() << std::endl;
+	out << "Signed: " << AForm.getSigned() << std::endl;
+	out	<< "Grade to sign: " << AForm.getSignedGrade() << std::endl;
+	out	<< "Grade to execute: " << AForm.getExecGrade() << std::endl;
 	return out;
 }

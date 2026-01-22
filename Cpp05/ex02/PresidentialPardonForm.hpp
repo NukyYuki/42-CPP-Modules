@@ -31,8 +31,7 @@ class PresidentialPardonForm : public AForm {
 
 		std::string			getTarget() const;
 
-		void				beSigned(Bureaucrat &signature);
-		void				execute(Bureaucrat const & executor) const;
+		void				execute(Bureaucrat const &executor) const;
 };
 
 std::ostream &operator<<(std::ostream &out, PresidentialPardonForm const &PresidentialPardonForm);

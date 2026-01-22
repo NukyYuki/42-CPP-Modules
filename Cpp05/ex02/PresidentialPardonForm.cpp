@@ -51,9 +51,19 @@ std::string PresidentialPardonForm::getTarget() const
 	return this->_target;
 }
 
-std::ostream &operator<<(std::ostream &out, PresidentialPardonForm const &PresidentialPardonForm)
+void	PresidentialPardonForm::execute(Bureaucrat const &executor) const {
+	AForm::execute(executor);
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
+
+
+std::ostream &operator<<(std::ostream &out, PresidentialPardonForm const &PresidentialForm)
 {
-	out << "PresidentialPardonForm Target: " << PresidentialPardonForm.getTarget() << ", Signed: " << PresidentialPardonForm.getSigned()
-		<< ", Sign Grade: " << PresidentialPardonForm.getSignedGrade() << ", Exec Grade: " << PresidentialPardonForm.getExecGrade() << std::endl;
+	out << "PresidentialPardonForm Target: " << PresidentialForm.getTarget() << std::endl;
+	out << "Form: " << PresidentialForm.getName() << std::endl;
+	out << "Signed: " << PresidentialForm.getSigned() << std::endl;
+	out	<< "Sign Grade: " << PresidentialForm.getSignedGrade() << std::endl;
+	out << "Exec Grade: " << PresidentialForm.getExecGrade() << std::endl;
 	return out;
 }
