@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:21:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/11/27 10:21:42 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/05 20:22:10 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/12/05 20:46:22 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
-
-int main(int ac, char **av)
+class Zombie
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << "\n";
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-			{
-				std::cout << static_cast	<char>(toupper(av[i][j]));
-			}
-		}
-		std::cout << "\n";
-	}
-}
+	private:
+		std::string _name;
+	public:
+		Zombie(std:: string name);
+		~Zombie();
+		void annouce(void);
+		Zombie* newZombie(std::string name);
+};
+
+void randomChump(std::string name);

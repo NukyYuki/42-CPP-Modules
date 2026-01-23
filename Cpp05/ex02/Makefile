@@ -1,0 +1,31 @@
+NAME = Bureaucrat
+
+SRCS = main.cpp \
+	Bureaucrat.cpp \
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp
+
+OBJS = $(patsubst %.cpp,%.o,$(SRCS))
+
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+clean:
+	rm -f $(OBJS) $(DEPS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: clean all
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(OBJS): %.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<

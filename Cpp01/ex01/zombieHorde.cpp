@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:21:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/11/27 10:21:42 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/05 20:22:21 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/12/05 21:25:37 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-
-int main(int ac, char **av)
+Zombie* zombieHorde( int N, std::string name )
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << "\n";
-	else
+	Zombie *zombie = new Zombie[N];
+	if (!zombie)
 	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-			{
-				std::cout << static_cast	<char>(toupper(av[i][j]));
-			}
-		}
-		std::cout << "\n";
+		std::cout << "Error creating horde" << std::endl;
+		return NULL;
 	}
+	for (int i = 0; i < N; i++)
+	{
+		zombie[i].setName(name);
+	}
+	return zombie;
 }

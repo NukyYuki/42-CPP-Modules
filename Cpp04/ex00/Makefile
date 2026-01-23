@@ -1,0 +1,43 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/01/06 17:29:05 by mipinhei          #+#    #+#              #
+#    Updated: 2026/01/06 17:29:06 by mipinhei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = Animal
+
+# Source files
+SRCS = main.cpp \
+	Animal.cpp \
+	Dog.cpp \
+	Cat.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp
+OBJS = $(patsubst %.cpp,%.o,$(SRCS))
+
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: clean all
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(OBJS): %.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:21:04 by mipinhei          #+#    #+#             */
-/*   Updated: 2025/11/27 10:21:42 by mipinhei         ###   ########.fr       */
+/*   Created: 2025/12/17 16:39:29 by mipinhei          #+#    #+#             */
+/*   Updated: 2025/12/17 16:39:44 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
+int main()
+{  
+    ClapTrap clap1("ClapOne");
+    ClapTrap clap2("ClapTwo");
 
-int main(int ac, char **av)
-{
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << "\n";
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-			{
-				std::cout << static_cast	<char>(toupper(av[i][j]));
-			}
-		}
-		std::cout << "\n";
-	}
+    clap1.attack("ClapTwo");
+    clap2.takeDamage(0);
+    clap2.beRepaired(5);
+    clap2.attack("ClapOne");
+    clap1.takeDamage(0);
+    clap1.beRepaired(3);
+
+    return 0;
 }
