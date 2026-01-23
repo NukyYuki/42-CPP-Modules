@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-22 15:51:40 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-22 15:51:40 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/22 15:51:40 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/23 12:07:07 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	{
 		std::cout << "Test 1" << std::endl;
 		std::cout << "Failed Tests" << std::endl;
-		Bureaucrat *bureaucrat = new Bureaucrat("Daniel", 150);
+		Bureaucrat *bureaucrat = new Bureaucrat("mipinhei", 150);
 		std::cout << *bureaucrat << std::endl;
 		ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("Home");
 		std::cout << *shrubbery << std::endl;
@@ -44,7 +44,7 @@ int main()
 	{
 		std::cout << "------Test 2------" << std::endl;
 		std::cout << "------Sucessuful Test------" << std::endl;
-		Bureaucrat *bureaucrat = new Bureaucrat("Daniel", 1);
+		Bureaucrat *bureaucrat = new Bureaucrat("mipinhei", 1);
 		std::cout << *bureaucrat << std::endl;
 		std::cout << std::endl;
 		ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("Home");
@@ -64,7 +64,7 @@ int main()
 		std::cout << std::endl;
 		std::cout << *robotomy << std::endl;
 		std::cout << std::endl;
-		PresidentialPardonForm *presidential = new PresidentialPardonForm("Daniel");
+		PresidentialPardonForm *presidential = new PresidentialPardonForm("mipinhei");
 		std::cout << *presidential << std::endl;
 		std::cout << std::endl;
 		bureaucrat->signAForm(*presidential);

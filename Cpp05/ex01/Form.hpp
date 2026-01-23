@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-15 11:21:53 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-15 11:21:53 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/15 11:21:53 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/23 14:53:12 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <string>
 #include <iostream>
 #include <exception>
+
+class Bureaucrat;
 
 class Form{
 	private:

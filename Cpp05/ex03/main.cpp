@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-22 15:51:40 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-01-22 15:51:40 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/01/22 15:51:40 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/01/23 14:24:12 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,65 +15,59 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int main()
-{
-	{
-		std::cout << "Test 1" << std::endl;
-		std::cout << "Failed Tests" << std::endl;
-		Bureaucrat *bureaucrat = new Bureaucrat("Daniel", 150);
-		std::cout << *bureaucrat << std::endl;
-		ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("Home");
-		std::cout << *shrubbery << std::endl;
-		bureaucrat->signAForm(*shrubbery);
-		bureaucrat->executeForm(*shrubbery);
-		RobotomyRequestForm *robotomy = new RobotomyRequestForm("Home");
-		std::cout << *robotomy << std::endl;
-		bureaucrat->signAForm(*robotomy);
-		bureaucrat->executeForm(*robotomy);
-		PresidentialPardonForm *presidential = new PresidentialPardonForm("Home");
-		std::cout << *presidential << std::endl;
-		bureaucrat->signAForm(*presidential);
-		bureaucrat->executeForm(*presidential);
-		delete bureaucrat;
-		delete shrubbery;
-		delete robotomy;
-		delete presidential;
-		std::cout << std::endl;
+int main() {
+	try {
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		Bureaucrat bob("Bob", 1);
+		bob.signAForm(*rrf);
+		bob.executeForm(*rrf);
+		delete rrf;
 	}
-	{
-		std::cout << "------Test 2------" << std::endl;
-		std::cout << "------Sucessuful Test------" << std::endl;
-		Bureaucrat *bureaucrat = new Bureaucrat("Daniel", 1);
-		std::cout << *bureaucrat << std::endl;
-		std::cout << std::endl;
-		ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("Home");
-		std::cout << *shrubbery << std::endl;
-		std::cout << std::endl;
-		bureaucrat->signAForm(*shrubbery);
-		bureaucrat->executeForm(*shrubbery);
-		std::cout << std::endl;
-		std::cout << *shrubbery << std::endl;
-		std::cout << std::endl;
-		
-		RobotomyRequestForm *robotomy = new RobotomyRequestForm("Bot Robot");
-		std::cout << *robotomy << std::endl;
-		std::cout << std::endl;
-		bureaucrat->signAForm(*robotomy);
-		bureaucrat->executeForm(*robotomy);
-		std::cout << std::endl;
-		std::cout << *robotomy << std::endl;
-		std::cout << std::endl;
-		PresidentialPardonForm *presidential = new PresidentialPardonForm("Daniel");
-		std::cout << *presidential << std::endl;
-		std::cout << std::endl;
-		bureaucrat->signAForm(*presidential);
-		bureaucrat->executeForm(*presidential);
-		std::cout << std::endl;
-		delete bureaucrat;
-		delete shrubbery;
-		delete robotomy;
-		delete presidential;
-		std::cout << std::endl;
+	catch (std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
+	std::cout << "---------------------------------" << std::endl;
+	try {
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Julius");
+		Bureaucrat bob("Bob", 1);
+		bob.signAForm(*rrf);
+		bob.executeForm(*rrf);
+		delete rrf;
+	}
+	catch (std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+	std::cout << "---------------------------------" << std::endl;
+	try {
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("presidential pardon", "Alice");
+		Bureaucrat bob("Bob", 1);
+		bob.signAForm(*rrf);
+		bob.executeForm(*rrf);
+		delete rrf;
+	}
+	catch (std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+	std::cout << "---------------------------------" << std::endl;
+	try {
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("no form", "Charlie");
+		Bureaucrat bob("Bob", 1);
+		bob.signAForm(*rrf);
+		bob.executeForm(*rrf);
+		delete rrf;
+	}
+	catch (std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+	return 0;
 }

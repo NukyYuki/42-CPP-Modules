@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 15:33:19 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/01/13 17:10:02 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:53:20 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <string>
 #include <iostream>
 #include <exception>
+
+class Form;
 
 class Bureaucrat{
   private:
