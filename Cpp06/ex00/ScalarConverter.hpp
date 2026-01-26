@@ -34,10 +34,25 @@ class ScalarConverter{
 		std::string	_string;
 
         ScalarConverter();
+        ScalarConverter(const std::string input);
         ScalarConverter(const ScalarConverter &obj);
         ScalarConverter &operator=(const ScalarConverter &obj);
         ~ScalarConverter();
 
+        int         getType()const;
+        int         getInt()const;
+        char		getChar()const;
+        float		getFloat()const;
+        double		getDouble()const;
+        std::string getInput()const;
+
+        void    isChar();
+        void    isInt();
+        void    isFloat();
+        void    isDouble();
+
+        int     checkInput();
+        void    printInput();
         
         
     public:
