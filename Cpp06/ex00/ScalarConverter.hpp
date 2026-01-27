@@ -31,13 +31,8 @@ class ScalarConverter{
 		char		_char;
 		float		_float;
 		double		_double;
-		std::string	_string;
+		std::string	_input;
 
-        ScalarConverter();
-        ScalarConverter(const std::string input);
-        ScalarConverter(const ScalarConverter &obj);
-        ScalarConverter &operator=(const ScalarConverter &obj);
-        ~ScalarConverter();
 
         int         getType()const;
         int         getInt()const;
@@ -53,8 +48,13 @@ class ScalarConverter{
 
         int     checkInput();
         void    printInput();
+        void    convertInput();
         
         
     public:
-        static void	convert(std::string literal);
+        ScalarConverter();
+        ScalarConverter(const std::string input);
+        ScalarConverter(const ScalarConverter &obj);
+        ScalarConverter &operator=(const ScalarConverter &obj);
+        ~ScalarConverter();
 };
