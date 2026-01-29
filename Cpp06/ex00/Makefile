@@ -1,7 +1,7 @@
-SRCS = ScalarConverter.cpp
+SRCS = ScalarConverter.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 NAME = convert
 INCLUDES = ScalarConverter.hpp
 
@@ -15,3 +15,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+
+re: fclean all	

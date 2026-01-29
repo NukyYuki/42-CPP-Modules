@@ -22,7 +22,8 @@
 #include <cstdlib>  // std::strtod
 #include <cctype>   // std::isprint
 #include <iomanip> 
-#include <exception> // Not necessary but good pratice
+#include <exception>
+#include <cerrno>
 
 class ScalarConverter{
     private:
@@ -31,6 +32,9 @@ class ScalarConverter{
 		char		_char;
 		float		_float;
 		double		_double;
+        bool        _intImpossible;
+        bool       _floatImpossible;
+        bool        _doubleImpossible;
 		std::string	_input;
 
 
