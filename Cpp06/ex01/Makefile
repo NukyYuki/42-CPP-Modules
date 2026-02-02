@@ -2,10 +2,10 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 CPPFLAGS = -I..
 
-SRCS = main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRCS = main.cpp Serializer.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = identify
-DEPS = Base.hpp A.hpp B.hpp C.hpp
+NAME = serializer
+DEPS = Serializer.hpp Data.hpp
 
 .PHONY: all clean fclean re
 
