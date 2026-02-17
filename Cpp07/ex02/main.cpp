@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/17 12:30:32 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/02/17 12:30:32 by mipinhei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Array.hpp"
 
 int main( void ) {
@@ -10,7 +22,7 @@ int main( void ) {
         std::cout << arr[i] << " ";
     std::cout << std::endl;
 
-    std::cout << "Testing Array class template with std::string type:" << std::endl;
+    std::cout << std::endl << "Testing Array class template with std::string type:" << std::endl;
     Array<std::string> strArr(3);
     strArr[0] = "Hello";
     strArr[1] = "World";
@@ -20,18 +32,25 @@ int main( void ) {
         std::cout << strArr[i] << " ";
     std::cout << std::endl;
 
-    std::cout << "Testing out of bounds access:" << std::endl;
+    std::cout << std::endl << "Testing out of bounds access:" << std::endl;
     try {
         std::cout << arr[5] << std::endl;
     } catch (const std::exception &e) {
         std::cout << "Caught exception: " << e.what();
     }
-    std::cout << "Testing access on empty array:" << std::endl;
+    std::cout << std::endl << "Testing out of bounds access:" << std::endl;
+    try {
+        std::cout << arr[-5] << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << "Caught exception: " << e.what();
+    }
+    std::cout << std::endl << "Testing access on empty array:" << std::endl;
     Array<int> emptyArr;
     try {
         std::cout << emptyArr[0] << std::endl;
     } catch (const std::exception &e) {
         std::cout << "Caught exception: " << e.what();
     }
+    std::cout << std::endl;
     return 0;
 }
