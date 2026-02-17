@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <string>
+
 template <typename T> void swap(T &int1, T &int2){
 
     T temp = int1;

@@ -1,5 +1,11 @@
 #include "iter.hpp"
 
-int main( void ) {
+void print(int &i) {
+    std::cout << i << std::endl;
+}
 
-return 0;
+int main( void ) {
+    int arr[] = {1, 2, 3, 4, 5};
+    iter(arr, 5, print);
+    return 0;
+}

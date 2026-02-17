@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 16:01:20 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/01/23 16:06:51 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/02/17 10:07:14 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #include <climits>
 #include <cstring>
 #include <cmath>
-#include <limits>   // std::numeric_limits<T>::min/max
-#include <cmath>    // std::isnan, std::isinf
-#include <cstdlib>  // std::strtod
-#include <cctype>   // std::isprint
+#include <limits>   
+#include <cmath>
+#include <cstdlib>
+#include <cctype>
 #include <iomanip> 
 #include <exception>
 #include <cerrno>
