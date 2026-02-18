@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 16:01:20 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/02/17 10:07:14 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:09:53 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,12 @@ class ScalarConverter{
         void    printInput();
         void    convertInput();
         
-        
-    public:
         ScalarConverter();
         ScalarConverter(const std::string input);
         ScalarConverter(const ScalarConverter &obj);
         ScalarConverter &operator=(const ScalarConverter &obj);
         ~ScalarConverter();
+        
+        public:
+           static void convert(const std::string &input);
 };

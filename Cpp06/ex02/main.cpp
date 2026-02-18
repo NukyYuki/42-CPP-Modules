@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mipinhei <mipinhei@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-01 21:17:50 by mipinhei          #+#    #+#             */
-/*   Updated: 2026-02-01 21:17:50 by mipinhei         ###   ########.fr       */
+/*   Created: 2026/02/01 21:17:50 by mipinhei          #+#    #+#             */
+/*   Updated: 2026/02/18 10:54:27 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 Base	*generate(){
 	
-	srand(time(NULL));
+/* 	srand(time(NULL)); */
 
 	int random = rand() % 3;
 	if (random == 0)
@@ -72,6 +72,7 @@ void	identify(Base &p){
 }
 
 int main(){
+	srand(time(NULL));
 	Base	*base = generate();
 	identify(base);
 	identify(*base);

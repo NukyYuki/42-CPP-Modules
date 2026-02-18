@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 16:01:17 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/01/23 16:01:18 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:12:11 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,7 +223,7 @@ void	ScalarConverter::isDouble(){
 void    ScalarConverter::printInput(){
 //	CHAR CHARACTER OUTPUT	
 	std::cout << "char: ";
-	if (getType() != -1 && getDouble() <= UCHAR_MAX && getDouble() >= 0)
+	if (getType() != -1 && getDouble() >= -128 && getDouble() <= 127 && !_intImpossible)
 	{
 		if (std::isprint(static_cast<unsigned char>(_char)))
 			std::cout << "'" << _char << "'" << std::endl;
@@ -300,4 +300,9 @@ void    ScalarConverter::printInput(){
 			std::cout << "impossible" << std::endl;
 		}
 	}
+}
+
+void ScalarConverter::convert(const std::string &input)
+{
+	ScalarConverter scalar(input);
 }
