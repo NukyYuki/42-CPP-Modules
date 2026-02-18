@@ -39,7 +39,7 @@ class Array{
         }
 
         Array   &operator=(const Array &obj){
-            if (this != obj)
+            if (this != &obj)
             {
                 delete[] _arr;
                 _size = obj._size;
@@ -48,7 +48,7 @@ class Array{
                     _arr[i] = obj._arr[i];
             }
             std::cout << "Array Template assignment operator called" << std::endl;
-            return (this);
+            return (*this);
         }
 
         T   &operator[](unsigned int index)

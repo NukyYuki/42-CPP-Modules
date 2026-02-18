@@ -6,14 +6,11 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 21:17:50 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/02/18 10:54:27 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/02/18 13:34:49 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
 
 Base	*generate(){
 	
@@ -28,20 +25,24 @@ Base	*generate(){
 		return (new C());
 }
 
-void	identify(Base* p){
+static void	identify(Base* p){
 	std::cout << "Pointer identify called" << std::endl;
 	std::cout << "Pointer type: " << std::endl;
+	if (p == NULL)
+		std::cout << "NULL" << std::endl;
 	if (dynamic_cast<A *>(p))
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B *>(p))
 		std::cout << "B" << std::endl;
 	else if (dynamic_cast<C *>(p))
 		std::cout << "C" << std::endl;
+	else
+		std::cout << "Unknown type" << std::endl;
 }
 
-void	identify(Base &p){
+static void	identify(Base &p){
 	std::cout << "Reference identify called" << std::endl;
-	std::cout << "reference type: " << std::endl;
+	std::cout << "Reference type: " << std::endl;
 	try{
 		A &a = dynamic_cast<A &>(p);
 		(void)a;
@@ -76,6 +77,9 @@ int main(){
 	Base	*base = generate();
 	identify(base);
 	identify(*base);
+	Base *nullBase = NULL;
+	identify(nullBase);
+	identify(NULL);
 	delete base;
 	return (0);
 }
