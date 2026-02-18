@@ -6,7 +6,15 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:21:19 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/02/18 10:21:20 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/02/18 14:06:23 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "easyfind.hpp"
+
+int main(){
+    try{}
+    catch{
+        
+    }
+}
