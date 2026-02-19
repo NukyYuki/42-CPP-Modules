@@ -6,7 +6,7 @@
 /*   By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 12:10:57 by mipinhei          #+#    #+#             */
-/*   Updated: 2026/02/19 14:16:47 by mipinhei         ###   ########.fr       */
+/*   Updated: 2026/02/19 17:57:54 by mipinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ class Span{
             virtual const char* what() const throw(){
                 return ("Unable to add any more elements, maximum size reached");
             }
-        }
+        };
 };
