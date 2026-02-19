@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mipinhei <mipinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/18 10:21:22 by mipinhei          #+#    #+#              #
-#    Updated: 2026/02/19 12:04:12 by mipinhei         ###   ########.fr        #
+#    Created: 2026/02/19 12:10:52 by mipinhei          #+#    #+#              #
+#    Updated: 2026/02/19 12:11:45 by mipinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 CPPFLAGS = -I..
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = easyfind
-DEPS = easyfind.hpp
+NAME = Span
+DEPS = Span.hpp
 
 .PHONY: all clean fclean re
 
