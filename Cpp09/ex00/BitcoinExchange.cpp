@@ -10,3 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "BitcoinExchange.hpp"
+
+BitCoinExchange::BitCoinExchange(std::string file){
+    
+}
+
+BitCoinExchange::BitCoinExchange(const BitCoinExchange &other){
+    *this = other;
+}
+
+BitCoinExchange &BitCoinExchange::operator=(const BitCoinExchange &other){
+    if (this != &other){
+        // Copy data members from other to this object
+    }
+    return *this;
+}
+
+BitCoinExchange::~BitCoinExchange(){
+    
+}
+
