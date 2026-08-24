@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <map>
 
 class BitCoinExchange{
@@ -23,7 +24,9 @@ class BitCoinExchange{
         void _loadDatabase(const std::string& dbPath);
         bool _isValidDate(const std::string& date) const;
         bool _isValidValue(const std::string& valStr, double& val) const;
-        void _processLine(const std::string& line) const;
+        bool _validateInputValue(const std::string& valueStr, double& value) const;
+        void _processLine(const std::string& line);
+        void _executeLookup(const std::string& date, double value) const;
 
     public:
         BitCoinExchange();
