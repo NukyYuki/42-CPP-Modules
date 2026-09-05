@@ -137,3 +137,37 @@ void BitCoinExchange::run(const std::string& inputFile){
 		_executeLookup(date, value);
 	}
 }
+
+void BitCoinExchange::_executeLookup(const std::string& date, double value) const{
+	std::map<std::string, double>::const_iterator it = _database.lower_bound(date);
+
+	if (it != _database.end() && it->first == date) {
+		std::cout << date << " => " << value << " = " << value * it->second << std::endl;
+	} 
+	else if (it == _database.begin()){
+		std::cout << "Error: data precedes database history" << date << std::endl;
+	}
+	else {
+		--it;
+		std::cout << date << " => " << value << " = " << value * it->second << std::endl;
+		}
+}
+
+bool BitCoinExchange::_validateInputValue(const std::string& valStr, double& value) const{
+	char* endPtr;
+	value = std::strtod(valStr.c_str(), &endPtr);
+
+	if (endPtr == valStr.c_str() || *endPtr != '\0') {
+		std::cout << "Error: Bad Input => " << valStr << std::endl;
+		return false;
+	}
+	if (value < 0) {
+		std::cout << "Error: Bad Input => " << valStr << std::endl;
+		return false;
+	}
+	if (value > 1000) {
+		std::cout << "Error: Too large a number => " << valStr << std::endl;
+		return false;
+	}
+	return true;
+}
