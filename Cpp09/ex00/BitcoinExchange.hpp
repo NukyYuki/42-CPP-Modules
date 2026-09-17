@@ -16,6 +16,8 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <cstdlib>
+#include <ctime>
 
 class BitCoinExchange{
     private:

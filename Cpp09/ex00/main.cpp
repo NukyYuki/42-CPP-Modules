@@ -18,7 +18,7 @@ int main(int ac, char **av){
         return (1);
     }
     try{
-        BitCoinExchange btc(av[1]);
+        BitCoinExchange btc("data.csv");
         btc.run(av[1]);
     }
     catch (std::exception &e){
